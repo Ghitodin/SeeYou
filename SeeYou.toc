@@ -1,0 +1,8 @@
+## Interface: 70300
+## Title: SeeYou
+## Notes: Allows the marking of targets using indicators that attach to nameplates.
+## Author: Ghito
+## Version: v1.0
+
+embeds.xml
+SeeYou.lua
