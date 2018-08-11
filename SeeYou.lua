@@ -33,6 +33,16 @@ do
 				pinIcon(playerName, "1")
 				print("Done")
 			end
+			if (msg == "2") then
+				local playerName = UnitName("target")
+				if (not playerName) then
+					print ("error on pin icon")
+					return
+				end
+				
+				pinIcon(playerName, "2")
+				print("Done")
+			end
 		end
 	end
 end
@@ -56,16 +66,27 @@ function pinIcon(playerName, iconName)
 end
 
 function iconsAlloc()
-	local f = CreateFrame("Frame", nil, UIParent)
-	f:SetFrameStrata("BACKGROUND")
-	f:SetWidth(25) -- Set these to whatever height/width is needed 
-	f:SetHeight(25) -- for your Texture
+	local f1 = CreateFrame("Frame", nil, UIParent)
+	f1:SetFrameStrata("BACKGROUND")
+	f1:SetWidth(25) -- Set these to whatever height/width is needed 
+	f1:SetHeight(25) -- for your Texture
 
-	local t = f:CreateTexture(nil, "BACKGROUND")
-	t:SetTexture("Interface\\AddOns\\SeeYou\\icons\\indicator1.tga", 0.5)
-	t:SetAllPoints(f)
-	f.texture = t
-	iconMap["1"] = f
+	local t1 = f1:CreateTexture(nil, "BACKGROUND")
+	t1:SetTexture("Interface\\AddOns\\SeeYou\\icons\\indicator1.tga", 0.5)
+	t1:SetAllPoints(f1)
+	f1.texture = t1
+	iconMap["1"] = f1
+	
+	local f2 = CreateFrame("Frame", nil, UIParent)
+	f2:SetFrameStrata("BACKGROUND")
+	f2:SetWidth(25) -- Set these to whatever height/width is needed 
+	f2:SetHeight(25) -- for your Texture
+
+	local t2 = f2:CreateTexture(nil, "BACKGROUND")
+	t2:SetTexture("Interface\\AddOns\\SeeYou\\icons\\indicator2.tga", 0.5)
+	t2:SetAllPoints(f2)
+	f2.texture = t2
+	iconMap["2"] = f2
 end
 
 EventFrame = CreateFrame("Frame");
